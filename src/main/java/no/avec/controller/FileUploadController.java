@@ -46,6 +46,12 @@ public class FileUploadController {
         return "uploadForm";
     }
 
+    @GetMapping("/test")
+    public String test(Model model) {
+        LOG.debug("test(...)");
+        return "test";
+    }
+
     @GetMapping("/files/{filename:.+}")
     @ResponseBody
     public ResponseEntity<Resource> serveFile(@PathVariable String filename) {

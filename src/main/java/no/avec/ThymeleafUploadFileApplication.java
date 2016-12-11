@@ -19,6 +19,7 @@ public class ThymeleafUploadFileApplication {
 	@Bean
 	CommandLineRunner init(StorageService storageService) {
 		return (args) -> {
+			// or run @PostConstruct inside the service
 			storageService.deleteAll();
 			storageService.init();
 		};
